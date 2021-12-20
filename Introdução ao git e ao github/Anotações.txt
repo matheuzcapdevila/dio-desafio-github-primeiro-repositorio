@@ -1,0 +1,112 @@
+Git: Sistema de versionamento de código distribuido 
+Github: respositório de git remoto
+
+O que é um sistema distribuido: possui multiplas cópias de si mesmo em locais diferentes
+
+Comando para listar as pastas: dir
+Comando para se deslocar entre pastas: cd /   (change directory)  
+Cd .. Para voltar
+Comand para limpar a tela: cls (clear screen)
+
+Tab é um comando de atalho que permite: completar os comandos
+
+Comando para criar pasta: mkdir (make directory)
+
+Comando para pritar um texto no terminal: echo hello
+
+Da pra utilizar o comando echo para criar uma uma pasta: echo hello > hello.txt
+
+Para deletar arquivos em uma pasta: del NomeDaPasta
+
+Comando para remover pastas e os arquivos dentro dela: rmdir workspace
+
+SHA1 serve para identificar mudanças no arquivos, qualquer virgula gera uma chave de 40 carecteres diferente (isso é o sha1)
+
+Qual software usar para os comandos git: git bash
+
+Como gerar uma chave sha1 em um arquivo: openssl sha1 teste.txt
+
+Objetos git: blob, tree
+
+O blob contem metadados do git ( tipo do objeto, tamanho da string, tamanho do arquivo, entre outros) 
+
+As trees armazenam blobs, ela aponta para um blob, alem do que tem no blob, guarda o  nome do arquivo, e aponta para outras arvores também o c
+
+Os blobs tem o sha1 do arquivo, e a tree tem o sha1 do arquivo
+
+Commit aponta para tree, parente (o ultimo commit, monta uma linha do tempo), autor, mensagem, timestamp (carimbo de tempo, criação)
+
+Gerando chave ssh (no git bash)
+
+Ssh-keygen -t ed5519 -C EmailGit@gmail.com   ed5519 é o tipo de criptografia
+
+Ir até a pasta que contem a chave pública e a chave privada gerada
+
+Comando para visualizar o conteudo das chaves: cat
+
+Visualizar a chave publica .pub (a chave exposta pro mundo é a pública)
+
+Usar o que foi gerado no github, SSH keys
+
+Então no bash usar: eval $(ssh-agent -s)
+
+Passar o chave da chave: ssh-ad id_ed25519 (chave privada)
+
+Assim o agent sempre descriptografa com a chave privada
+
+Clonar o repositorio: uma copia do repositorio vai para máquina. Utilizar o caminho SSH. Comando no bash: git clone CaminhoSSHdoGit
+
+Iniciar o git dentro de uma pasta: git init
+
+Para mostrar arquivos ocultos no bash: git -a
+
+O git na primeira vez requer: username e um email (tem que ter um autor)
+
+Comando para isso: git config --global user.email "emailEX@gt"
+			    git config --global user.nickname Matheus
+			
+
+Comando para comitar um arquivo: git add *
+
+Git commit -m "commit inicial"   Essa é uma mensagem para entender o significado do commit
+
+O Git init inicia um conceito chamado repositório
+
+Os arquivos rastreados pelo git podem se dividir em: unmodified, modified e staged
+
+E untracked é quando o git não tem ciencia, e tracked o git tem ciencia
+
+O arquivo vai de unmodified para modified comparando o SHA1 dos dois arquivos (houve modificação no arquivo)
+
+Quando usa o git add o modified paassa para staged
+
+Quando comita tudo vai para unmodified
+
+Ambiente de desenvolvimento: tudo que está nossa máquina
+
+No A.d.D tem o respositório de trabalh(working directory) o que está sendo modificado, staging area (modificado), local repository (foi comitado)
+
+E então o repositório local, pode ser empurrado para um respositório remoto (servidor)
+
+Git remote -v: mostra os respositorios remotos que está apontado 
+
+Comando para verificar o status dos arquivos: git status
+
+Comando para mover arquivos: mv NomeArquivo ./receitas (destino)
+
+Comando para empurrar para o github: git push origin master
+
+O que é git clone: pegar o depositorio e clonar para sua materia
+
+Comando para clonear
+
+Git clone EndereçoRepositorio
+
+Quando Github tem um arquivo que não tem no seu repositorio tem que usar comando: git pull origin master
+
+O que são conflitos de merge: quando o repositorio remoto tem algum arquivo que você não tem localmente
+
+Markdown:linguagem de programação que pode ser usada dentro do repositorio git
+
+Git bash: terminal extendido para otimizar o uso do git
+
